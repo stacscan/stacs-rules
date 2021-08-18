@@ -1,4 +1,4 @@
-[![Shield](https://img.shields.io/github/workflow/status/stacscan/stacs-rules/check?style=flat-square)](https://github.com/stacscan/stacs-rules/actions?workflow=check)
+[![Shield](https://img.shields.io/github/workflow/status/stacscan/stacs-rules/Check?style=flat-square)](https://github.com/stacscan/stacs-rules/actions?workflow=Check)
 [![Shield](https://img.shields.io/twitter/follow/stacscan?style=flat-square)](https://twitter.com/stacscan)
 <p align="center">
     <br /><br />
