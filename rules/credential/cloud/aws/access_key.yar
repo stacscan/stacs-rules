@@ -3,7 +3,7 @@ rule CredentialCloudAWSAccessKey : Credential Cloud AWS {
     meta:
         name        = "AWS Access Key"
         author      = "Peter Adkins"
-        version     = "0.1.0"
+        version     = "0.1.1"
         accuracy    = 80
         description = "Potential AWS access key found."
 
