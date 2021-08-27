@@ -8,7 +8,7 @@ rule CredentialCloudAWSAccessKey : Credential Cloud AWS {
         description = "Potential AWS access key found."
 
     strings:
-        $ascii_0 = /(\"|\'|=|\s+|,|;)?(AKIA|ASIA)[0-9A-Z]{16}(\"|\'|=|\s+|,|;|\x00)/ ascii wide
+        $ascii_0 = /(\"|\'|=|\s+|,|`|;)?(AKIA|ASIA)[0-9A-Z]{16}(\"|\'|=|\s+|,|`|;|\x00)/ ascii wide
     
     condition:
         any of them
