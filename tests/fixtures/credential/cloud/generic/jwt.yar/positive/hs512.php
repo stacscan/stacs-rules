@@ -1,0 +1,3 @@
+<?php
+
+$example = "eyJhbGciOiJIUzUxMiJ9.eyJJc3N1ZXIiOiJJc3N1ZXIiLCJleHAiOjE2NDE4NTA2MDgsImlhdCI6MTY0MTg1MDYwOH0.s8uyBca0Cqfh9TYeNdSR2-pu5uOgvETw8aa-DHxJpNHkQPsEhl-OCQmkwWyUA1rQi6t9TJioTcyyw66bWA6bFw";
