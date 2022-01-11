@@ -1,11 +1,11 @@
 rule CredentialCloudGenericJWT : Credential Cloud Generic {
 
     meta:
-        name        = "JSON Web Token"
+        name        = "JWT (JSON Web Token)"
         author      = "Peter Adkins"
-        version     = "0.1.0"
+        version     = "0.2.0"
         accuracy    = 80
-        description = "Potential JSON Web Token (JWT) found."
+        description = "Potential JWT (JSON Web Token) found."
 
     strings:
         $format   = /ey[A-Za-z0-9_\-=]+.ey[A-Za-z0-9_\-=]+.[A-Za-z0-9_\-=]+/ ascii wide
