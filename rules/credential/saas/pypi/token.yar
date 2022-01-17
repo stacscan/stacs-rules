@@ -13,5 +13,5 @@ rule CredentialSaaSPyPIToken : Credential SaaS PyPI {
         $base64_1 = "pypi.org" base64 base64wide private
     
     condition:
-        $ascii_0 and $base64_0 and $base64_1
+        all of them
 }

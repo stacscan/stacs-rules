@@ -11,5 +11,5 @@ rule CredentialSaaSSlackUserToken : Credential SaaS Slack {
         $ascii_0 = /xoxp-[0-9]{4,}-[0-9]{4,}-[0-9]{4,}-[0-9a-f]{32}/ ascii wide nocase
     
     condition:
-        $ascii_0
+        any of them
 }
