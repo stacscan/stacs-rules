@@ -10,7 +10,7 @@ rule CredentialCloudGenericJWT : Credential Cloud Generic {
     strings:
         $format   = /ey[A-Za-z0-9_\-=]+.ey[A-Za-z0-9_\-=]+.[A-Za-z0-9_\-=]+/ ascii wide
 
-        //Algorithms are per RFC7518
+        // Algorithms are per RFC7518.
         $alg_0  = "\"alg\"" base64("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") base64wide("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") private
         $alg_1  = "\"A128GCMKW\"" base64("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") base64wide("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") private
         $alg_2  = "\"A128KW\"" base64("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") base64wide("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") private

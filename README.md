@@ -27,7 +27,7 @@ repository.
 
 ```shell
 find rules -name *.yar | sed 's/rules\///' \
-    | xargs -I{} sh -c "\
+    | xargs -I{} bash -c "\
         mkdir -p ./tests/fixtures/{}/{positive,negative} ; \
         touch ./tests/fixtures/{}/{negative,positive}/.gitignore"
 ```
