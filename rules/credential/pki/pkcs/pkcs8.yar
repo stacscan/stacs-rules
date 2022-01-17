@@ -1,4 +1,4 @@
-rule CredentialPKIPKCS8 : Credential PKI PKCS {
+rule CredentialPKIPKCS8 : Credential PKI PKCS PKCS8 {
 
     meta:
         name        = "PEM format private key (PKCS#8)"
