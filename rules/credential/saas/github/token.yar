@@ -1,4 +1,4 @@
-rule CredentialSaaSGithubToken : Credential Cloud AWS {
+rule CredentialSaaSGithubToken : Credential SaaS Github {
 
     meta:
         name        = "Github API token"

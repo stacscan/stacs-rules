@@ -1,4 +1,4 @@
-rule CredentialPKIPKCS8 : Credential PKI PKCS {
+rule CredentialPKIPKCS8 : Credential PKI PKCS PKCS8 {
 
     meta:
         name        = "PEM format private key (PKCS#8)"
@@ -8,8 +8,10 @@ rule CredentialPKIPKCS8 : Credential PKI PKCS {
         description = "Potential PEM format PKCS#8 private key found."
 
     strings:
-        $pkcs8_0 = /-----BEGIN (ENCRYPTED )?PRIVATE KEY-----(\n|\\n)MII[A-Z0-9=+\/]{20,}/ ascii wide nocase
+        $ascii_pkcs8_0  = /-----BEGIN (ENCRYPTED )?PRIVATE KEY-----(\n|\\n)MII[A-Z0-9=+\/]{20,}/ ascii wide nocase
+        $base64_pkcs8_0 = "-----BEGIN ENCRYPTED PRIVATE KEY-----\nMII" base64 base64wide
+        $base64_pkcs8_1 = "-----BEGIN PRIVATE KEY-----\nMII" base64 base64wide
 
     condition:
-        $pkcs8_0
+        any of them
 }
