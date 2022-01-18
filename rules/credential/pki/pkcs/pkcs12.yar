@@ -12,5 +12,5 @@ rule CredentialPKIPKCS12 : Credential PKI PKCS PKCS12 {
         $pkcs12_keyid_bin_0  = { 06 09 2A 86 48 86 F7 0D 01 09 15 } private // 1.2.840.113549.1.9.21
 
     condition:
-        any of them
+        all of them
 }
