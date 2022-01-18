@@ -3,7 +3,7 @@ rule CredentialPKIPKCS12 : Credential PKI PKCS PKCS12 {
     meta:
         name        = "Private key (PKCS#12 / PFX)"
         author      = "Peter Adkins"
-        version     = "0.2.0"
+        version     = "0.3.0"
         accuracy    = 100
         description = "Potential private key (PKCS#12 / PFX)  found."
 
