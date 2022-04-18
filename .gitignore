@@ -147,3 +147,6 @@ stacs-rules/
 
 # macOS files.
 .DS_Store
+
+# Allow log files in test fixtures
+!tests/fixtures/*.log
