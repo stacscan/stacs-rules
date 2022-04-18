@@ -3,16 +3,18 @@ rule CredentialSaaSNPMToken : Credential SaaS NPM {
     meta:
         name        = "NPM access token"
         author      = "Peter Adkins"
-        version     = "0.1.0"
+        version     = "0.2.0"
         accuracy    = 100
         description = "Potential NPM access token found."
 
     strings:
-        $ascii_0 = /registry/ ascii wide private
-        $ascii_1 = /npm/ ascii wide private
-        $ascii_2 = /:_password('|"|\s){0,}=('|"|\[|\s){0,}[A-Z0-9=+\/.\-_]{9,}('|"|\]){0,}/ ascii wide nocase
-        $ascii_3 = /:_authToken('|"|\s){0,}=('|"|\[|\s){0,}[A-Z0-9=+\/.\-_]{9,}('|"|\]){0,}/ ascii wide nocase
+        $atom_0 = "registry" ascii wide private
+        $atom_1 = "_password" ascii wide private
+        $atom_2 = "_authToken" ascii wide private
+
+        $ascii_0 = /:_password('|"|\s){0,8}=('|"|\[|\s){0,64}[A-Z0-9=+\/.\-_]{9}('|"|\]){0,8}/ ascii wide nocase
+        $ascii_1 = /:_authToken('|"|\s){0,8}=('|"|\[|\s){0,64}[A-Z0-9=+\/.\-_]{9}('|"|\]){0,8}/ ascii wide nocase
     
     condition:
-        ($ascii_0 or $ascii_1) and ($ascii_2 or $ascii_3)
+        (any of ($atom_*)) and (any of ($ascii_*))
 }

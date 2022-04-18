@@ -3,12 +3,12 @@ rule CredentialCloudGenericJWT : Credential Cloud Generic {
     meta:
         name        = "JWT (JSON Web Token)"
         author      = "Peter Adkins"
-        version     = "0.2.0"
+        version     = "0.4.0"
         accuracy    = 80
         description = "Potential JWT (JSON Web Token) found."
 
     strings:
-        $format   = /ey[A-Za-z0-9_\-=]+.ey[A-Za-z0-9_\-=]+.[A-Za-z0-9_\-=]+/ ascii wide
+        $format   = /ey[A-Za-z0-9_\-=]{1,1000}.ey[A-Za-z0-9_\-=]{1,1000}.[A-Za-z0-9_\-=]{1,1000}/ ascii wide
 
         // Algorithms are per RFC7518.
         $alg_0  = "\"alg\"" base64("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") base64wide("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") private
@@ -44,38 +44,36 @@ rule CredentialCloudGenericJWT : Credential Cloud Generic {
         $alg_30 = "\"none\"" base64("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") base64wide("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") private
 
     condition:
-        $format and (
-            $alg_0 and (
-                $alg_1 or
-                $alg_2 or
-                $alg_3 or
-                $alg_4 or
-                $alg_5 or
-                $alg_6 or
-                $alg_7 or
-                $alg_8 or
-                $alg_9 or
-                $alg_10 or
-                $alg_11 or
-                $alg_12 or
-                $alg_13 or
-                $alg_14 or
-                $alg_15 or
-                $alg_16 or
-                $alg_17 or
-                $alg_18 or
-                $alg_19 or
-                $alg_20 or
-                $alg_21 or
-                $alg_22 or
-                $alg_23 or
-                $alg_24 or
-                $alg_25 or
-                $alg_26 or
-                $alg_27 or
-                $alg_28 or
-                $alg_29 or
-                $alg_30
-            )
-        )
+        $alg_0 and (
+            $alg_1 or
+            $alg_2 or
+            $alg_3 or
+            $alg_4 or
+            $alg_5 or
+            $alg_6 or
+            $alg_7 or
+            $alg_8 or
+            $alg_9 or
+            $alg_10 or
+            $alg_11 or
+            $alg_12 or
+            $alg_13 or
+            $alg_14 or
+            $alg_15 or
+            $alg_16 or
+            $alg_17 or
+            $alg_18 or
+            $alg_19 or
+            $alg_20 or
+            $alg_21 or
+            $alg_22 or
+            $alg_23 or
+            $alg_24 or
+            $alg_25 or
+            $alg_26 or
+            $alg_27 or
+            $alg_28 or
+            $alg_29 or
+            $alg_30
+        ) and $format
 }
