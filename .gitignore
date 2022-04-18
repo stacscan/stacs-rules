@@ -149,4 +149,4 @@ stacs-rules/
 .DS_Store
 
 # Allow log files in test fixtures
-!tests/fixtures/*.log
+!tests/fixtures/**/*.log
