@@ -3,13 +3,14 @@ rule CredentialSaaSSlackUserToken : Credential SaaS Slack {
     meta:
         name        = "Slack User OAuth token"
         author      = "Peter Adkins"
-        version     = "0.1.0"
+        version     = "0.2.0"
         accuracy    = 100
         description = "Potential Slack User OAuth token found."
 
     strings:
-        $ascii_0 = /xoxp-[0-9]{4,}-[0-9]{4,}-[0-9]{4,}-[0-9a-f]{32}/ ascii wide nocase
+        $atom_0  = "xoxp-" ascii wide
+        $ascii_0 = /xoxp-[0-9]{4,24}-[0-9]{4,24}-[0-9]{4,24}-[0-9a-fA-F]{32}/ ascii wide
     
     condition:
-        any of them
+        $atom_0 and $ascii_0
 }

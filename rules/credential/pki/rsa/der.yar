@@ -8,6 +8,9 @@ rule CredentialPKIPEMDER : Credential PKI DER {
         description = "Potential DER format RSA private key found."
 
     strings:
+        $atom_0 = { 02 01 00 02 } private    // version + next byte.
+        $atom_1 = { 02 03 01 00 01 } private // e=65537
+
         // Per RFC8017 Appendix A.1.2 - It's possible to see exponents other than 3 and
         // 65537, but... really?
         $pkcs1_m512_bin_0  = { 30 82 01 ?? 02 01 00 02 41 00 [64] 02 03 01 00 01 }         // n=512, e=65537
@@ -26,5 +29,5 @@ rule CredentialPKIPEMDER : Credential PKI DER {
         $pkcs1_m8192_bin_1 = { 30 82 12 ?? 02 01 00 02 82 04 01 00 [1024] 02 01 03 }       // n=8192, e=3
 
     condition:
-        any of them
+        ($atom_0 and $atom_1) and (any of ($pkcs1_*))
 }
