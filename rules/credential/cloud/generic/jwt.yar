@@ -3,12 +3,12 @@ rule CredentialCloudGenericJWT : Credential Cloud Generic {
     meta:
         name        = "JWT (JSON Web Token)"
         author      = "Peter Adkins"
-        version     = "0.4.0"
+        version     = "0.5.0"
         accuracy    = 80
         description = "Potential JWT (JSON Web Token) found."
 
     strings:
-        $format   = /ey[A-Za-z0-9_\-=]{1,1000}.ey[A-Za-z0-9_\-=]{1,1000}.[A-Za-z0-9_\-=]{1,1000}/ ascii wide
+        $format   = /ey[A-Za-z0-9_\-=]{1,1000}.(e|E)(Y|y)[A-Za-z0-9_\-=]{1,1000}.[A-Za-z0-9_\-=]{1,1000}/ ascii wide
 
         // Algorithms are per RFC7518.
         $alg_0  = "\"alg\"" base64("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") base64wide("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_") private
