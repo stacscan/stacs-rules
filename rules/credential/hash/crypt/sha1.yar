@@ -3,7 +3,7 @@ rule CredentialHashSHA1 : Credential Hash SHA1 {
     meta:
         name        = "SHA1 crypt hash found"
         author      = "Peter Adkins"
-        version     = "0.2.0"
+        version     = "0.2.1"
         accuracy    = 100
         description = "File contains a SHA1 crypt hash which may be a credential."
 
@@ -12,7 +12,7 @@ rule CredentialHashSHA1 : Credential Hash SHA1 {
         // from these constructs.
         $atom_0  = "$sha1" nocase ascii wide private
 
-        $ascii_0 = /\$sha1\$[0-9]+\$[0-9A-Z\.\/]{0,64}\$[0-9A-Z\.\/]{20,28}/ ascii wide nocase
+        $ascii_0 = /\$sha1\$[0-9]+\$[0-9A-Z\.\/]{0,64}\$[0-9A-Z\.\/]{20,28}/ fullword ascii wide nocase
 
     condition:
         $atom_0 and $ascii_0
