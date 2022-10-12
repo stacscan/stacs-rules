@@ -1,4 +1,4 @@
-rule CredentialCloudGenericJWT : Credential Cloud Generic {
+rule CredentialCloudGenericJWT : Credential Generic JWT {
 
     meta:
         name        = "JWT (JSON Web Token)"

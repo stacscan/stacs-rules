@@ -1,4 +1,4 @@
-rule CredentialPKIPKCS12 : Credential PKI PKCS PKCS12 {
+rule CredentialPKIPKCS12 : Credential PKI PKCS12 {
 
     meta:
         name        = "Private key (PKCS#12 / PFX)"
