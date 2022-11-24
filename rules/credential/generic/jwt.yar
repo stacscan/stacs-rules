@@ -1,9 +1,9 @@
-rule CredentialCloudGenericJWT : Credential Generic JWT {
+rule CredentialGenericJWT : Credential Generic JWT {
 
     meta:
         name        = "JWT (JSON Web Token)"
         author      = "Peter Adkins"
-        version     = "0.5.0"
+        version     = "0.6.0"
         accuracy    = 80
         description = "Potential JWT (JSON Web Token) found."
 
